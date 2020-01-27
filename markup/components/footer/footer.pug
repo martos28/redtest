@@ -1,0 +1,27 @@
+mixin footer(data)
+  footer.footer
+    .container 
+      .header__row 
+        aside.header__side
+          a(href="").logo
+            != pugHelpers.Icon.call(locals, {iconName: 'logo-museum2', className: 'logo-vector-footer ', iconWidth: '48', iconHeight: '48'})
+          nav.top-menu
+            ul.top-menu__wrapper
+              li.top-menu__list-item
+                  a(href="").top-menu__link.top-menu__link_active  Каталог
+              li.top-menu__list-item
+                  a(href="").top-menu__link Доставка
+              li.top-menu__list-item
+                  a(href="").top-menu__link Оплата 
+              li.top-menu__list-item
+                  a(href="").top-menu__link Контакты 
+              li.top-menu__list-item
+                  a(href="").top-menu__link О галерее
+
+        aside.footer__right-aside 
+          a(href="tel:+74955555555").footer__phone
+            != pugHelpers.Icon.call(locals, {iconName: 'phone', className: 'icons ', iconWidth: '14', iconHeight: '14'}) 
+            span +7 (495) 555-55-55 
+          address.footer__address 
+            != pugHelpers.Icon.call(locals, {iconName: 'place', className: 'icons ', iconWidth: '10', iconHeight: '14'}) 
+            span г. Москва, Ул. Расплетина, 24

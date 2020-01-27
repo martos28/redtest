@@ -1,0 +1,82 @@
+doctype html
+html(class="no-js", lang="ru")
+    include ../components/head/head.pug
+    include ../components/footer/footer.pug
+    head
+        +head(head.defaults)
+    body.page
+        |%=symbols=%
+        section.page__wrapper
+            .header
+              .container 
+                .header__row 
+                  aside.header__side
+                    a(href="").logo.logo_header
+                      != pugHelpers.Icon.call(locals, {iconName: 'logo-museum2', className: 'logo-vector-header ', iconWidth: '48', iconHeight: '48'})
+                    nav.top-menu
+                      ul.top-menu__wrapper
+                        li.top-menu__list-item
+                          a(href="").top-menu__link.top-menu__link_active  Каталог
+                        li.top-menu__list-item
+                          a(href="").top-menu__link Доставка
+                        li.top-menu__list-item
+                          a(href="").top-menu__link Оплата
+                        li.top-menu__list-item
+                          a(href="").top-menu__link Контакты
+                        li.top-menu__list-item
+                          a(href="").top-menu__link О галерее
+                  form(action="").search
+                    input(type="text" placeholder="Поиск по названию картины ").search__field
+                    button.btn.btn_search Найти  
+            main.rel
+              //- .perfecto
+              .container  
+                h1.main-title Картины эпохи Возрождения
+                .products
+                  .product
+                    a(href="").product__picture-link 
+                      img(src="%=static=%img/general/1.jpg", alt="Рождение Венеры» Сандро Боттичелли" ).product__image
+                    .product__wrapper
+                      a(href="").product__name &laquo; Рождение Венеры» Сандро Боттичелли &raquo;
+                      .product__bottom
+                        .product__prices
+                          s.product__prices-old 2 000 000 $ 
+                          span.product__prices-regular 1 000 000 $
+                        button(type="button").btn.js_incart#product1 Купить 
+                  .product
+                    a(href="").product__picture-link 
+                      img(src="%=static=%img/general/2.jpg", alt="Тайная вечеря» Леонардо да Винчи" ).product__image
+                    .product__wrapper
+                      a(href="").product__name &laquo; Тайная вечеря» Леонардо да Винчи &raquo;
+                      .product__bottom
+                        .product__prices
+                          span.product__prices-regular 3 000 000 $
+                        button(type="button").btn.js_incart#product2 Купить 
+                  .product
+                    a(href="").product__picture-link 
+                      img(src="%=static=%img/general/3.jpg", alt="Сотворение Адама» Микеланджело" ).product__image
+                    .product__wrapper
+                      a(href="").product__name &laquo; Сотворение Адама» Микеланджело &raquo;
+                      .product__bottom
+                        .product__prices
+                          s.product__prices-old 6 000 000 $ 
+                          span.product__prices-regular 5 000 000 $
+                        button(type="button").btn.js_incart#product3 Купить
+                  .product.product_sold-out 
+                    a(href="").product__picture-link 
+                      img(src="%=static=%img/general/4.jpg", alt="Урок анатомии» Рембрандт" ).product__image
+                    .product__wrapper
+                      a(href="").product__name &laquo; Урок анатомии» Рембрандт &raquo;
+                      .product__bottom
+                        p.sold-out Продана на аукционе
+
+            .page__buffer
+
+        .page__footer
+            +footer()
+        script(src='https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js')
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
+
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='%=static=%js/main%=hash=%%=min=%.js')

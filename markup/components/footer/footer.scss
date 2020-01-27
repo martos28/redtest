@@ -1,0 +1,18 @@
+.footer {
+    height: 96px;
+    background-color: #ECEAEA;
+    &__phone, &__address {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color:$mcolor;
+        font-size: 14px;
+        font-style:normal; 
+    }
+    &__phone {
+        margin-right: 51px;
+    }
+    &__right-aside  {
+        display: flex;
+    }
+}
